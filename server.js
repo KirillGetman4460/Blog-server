@@ -25,7 +25,12 @@ const start = async () => {
         await mongoose.connect("mongodb+srv://Kirill:appdata@cluster0.s5rpm.mongodb.net/Blog?retryWrites=true&w=majority",{ 
             useNewUrlParser:true, useUnifiedTopology:true 
         })
-        
+
+
+        app.get('/',(req,res) => {
+            res.send("Hello world")
+        })
+
         app.listen(PORT, () => console.log("Server is running at port:",PORT))    
 
     }catch (err) {
